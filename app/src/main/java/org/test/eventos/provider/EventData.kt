@@ -1,7 +1,7 @@
 package org.test.eventos.provider
 
 /*
-object Data {
+object EventData {
 
     private var events: List<Evento>? = null
 
