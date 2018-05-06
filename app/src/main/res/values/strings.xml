@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Eventos</string>
+
+    <string name="action_search">Buscar</string>
+    <string name="action_info">Información</string>
+    <string name="action_about">Acerca de</string>
+    <string name="action_more">Más</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_cine">Cine</string>
+    <string name="nav_conciertos">Conciertos</string>
+    <string name="nav_restaurantes">Restaurantes</string>
+    <string name="nav_teatro">Teatro</string>
+    <string name="nav_publicos">Publicos</string>
+    <string name="nav_semana_santa">Semana Santa</string>
+    <string name="nav_gastronomico">Gastronomico</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="nav_salir">Cerrar Sesion</string>
+
+    <string name="descripcion">Descripción</string>
+
 </resources>
