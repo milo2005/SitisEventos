@@ -152,3 +152,7 @@ fun ejemplo5(){
 class Admin(nombre:String):Usuario(nombre)
 
 data class Evento1(val nombre:String, val duracion:Int)
+
+object SingletonEjemplo{
+
+}

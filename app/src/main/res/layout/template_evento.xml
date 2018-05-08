@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/img"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/template_img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@color/img" />
+                app:backgroundImage="@color/img" />
 
             <ImageView
                 android:id="@+id/mask"
@@ -112,9 +112,11 @@
                 android:id="@+id/phone"
                 android:layout_width="336dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:text="TextView"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="238dp" />
+                app:layout_constraintBottom_toBottomOf="@+id/iconPhone"
+                app:layout_constraintStart_toEndOf="@+id/iconPhone" />
 
         </android.support.constraint.ConstraintLayout>
 
