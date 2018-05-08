@@ -8,4 +8,8 @@ class Evento(val nombre: String,
                   val lugar: String,
                   val telefono: String,
                   val descripcion: String
-)
+):ItemEvent(){
+
+    override fun getType(): Int = TYPE_EVENT
+
+}
