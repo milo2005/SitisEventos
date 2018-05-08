@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/nav_home"
+        android:title="@string/nav_home"
+        android:icon="@drawable/ic_location"/>
+
+    <item android:id="@+id/nav_cine"
+        android:title="@string/nav_cine"
+        android:icon="@drawable/ic_phone"
+        />
+
+    <item android:id="@+id/nav_conciertos"
+        android:title="@string/nav_conciertos"
+        android:icon="@drawable/ic_today"/>
+
+    <item android:id="@+id/nav_teatro"
+        android:title="@string/nav_teatro"
+        android:icon="@drawable/ic_location"/>
+
+    <item android:title="@string/nav_perfil">
+        <menu>
+            <item
+                android:id="@+id/nav_salir"
+                android:title="@string/nav_salir"/>
+        </menu>
+    </item>
+
 </menu>
