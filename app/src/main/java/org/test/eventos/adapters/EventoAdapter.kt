@@ -12,7 +12,7 @@ import org.test.eventos.models.ItemEvent
 import org.test.eventos.models.Promocion
 import org.test.eventos.util.inflate
 
-class EventoAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class EventoAdapter(val onClick:((pos:Int, type:Int)->Unit)? = null):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     var data:List<ItemEvent> = emptyList()
         set(value){
@@ -31,8 +31,8 @@ class EventoAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is EventoViewHolder -> holder.bind(data[position] as Evento)
-            is PromocionViewHolder -> holder.bind(data[position] as Promocion)
+            is EventoViewHolder -> holder.bind(data[position] as Evento, position, onClick)
+            is PromocionViewHolder -> holder.bind(data[position] as Promocion, position, onClick)
         }
     }
 
@@ -41,19 +41,27 @@ class EventoAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 }
 
 class EventoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(evento:Evento){
+    fun bind(evento:Evento,pos:Int,
+             onClick:((pos:Int, type:Int)->Unit)?=null){
+
         itemView.name.text = evento.nombre
         itemView.loc.text = evento.lugar
         itemView.phone.text = evento.telefono
         itemView.img.setImageURI(evento.imagen)
+        itemView.setOnClickListener{
+            onClick?.invoke(pos, ItemEvent.TYPE_EVENT)
+        }
     }
 }
 
 class PromocionViewHolder(view:View): RecyclerView.ViewHolder(view){
-    fun bind(promo:Promocion){
+    fun bind(promo:Promocion, pos:Int,  onClick:((pos:Int, type:Int)->Unit)?=null){
         itemView.namePromo.text = promo.nombre
         itemView.place.text = promo.lugar
         itemView.imgPlace.setImageURI(promo.lugarImagen)
         itemView.imgPromo.setImageURI(promo.imagen)
+        itemView.setOnClickListener{
+            onClick?.invoke(pos, ItemEvent.TYPE_PROMO)
+        }
     }
 }
