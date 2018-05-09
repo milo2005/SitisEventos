@@ -19,11 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".DetailEventActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
+        <activity
+            android:name=".DetailEventActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DetailPromoActivity"></activity>
     </application>
 
 </manifest>

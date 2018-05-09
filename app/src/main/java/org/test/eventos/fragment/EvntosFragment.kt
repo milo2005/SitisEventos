@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_evntos.*
 import org.test.eventos.DetailEventActivity
+import org.test.eventos.DetailPromoActivity
 
 import org.test.eventos.R
 import org.test.eventos.adapters.EventoAdapter
@@ -48,6 +49,7 @@ class EvntosFragment : Fragment() {
         startActivity(intent)*/
         when(type){
             ItemEvent.TYPE_EVENT -> startActivity<DetailEventActivity>("pos" to pos)
+            ItemEvent.TYPE_PROMO -> startActivity<DetailPromoActivity>("pos" to pos)
         }
     }
 
