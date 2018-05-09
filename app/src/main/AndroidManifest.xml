@@ -22,7 +22,9 @@
         <activity
             android:name=".DetailEventActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailPromoActivity"></activity>
+        <activity android:name=".DetailPromoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>

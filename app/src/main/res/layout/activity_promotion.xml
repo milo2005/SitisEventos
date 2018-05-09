@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/img"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -87,7 +87,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Nombre Promocion" />
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/imgProfile"
         android:layout_width="50dp"
         android:layout_height="50dp"
