@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.main)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -42,10 +42,10 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.action_search -> toast("click en buscar")
-            android.R.id.home ->if(drawer.isDrawerOpen(nav)){
-                drawer.closeDrawer(nav)
+            android.R.id.home ->if(drawer?.isDrawerOpen(nav) == true){
+                drawer?.closeDrawer(nav)
             } else{
-                drawer.openDrawer(nav)
+                drawer?.openDrawer(nav)
             }
 
         }

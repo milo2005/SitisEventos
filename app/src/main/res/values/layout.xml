@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="column">1</integer>
+    <item name="main" type="layout">@layout/activity_main</item>
+
+</resources>

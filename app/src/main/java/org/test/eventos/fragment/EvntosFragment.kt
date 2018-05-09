@@ -3,6 +3,7 @@ package org.test.eventos.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +27,8 @@ class EvntosFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         list.adapter = adapter
-        list.layoutManager = LinearLayoutManager(activity)
+        val columns:Int = resources.getInteger(R.integer.column)
+        list.layoutManager = GridLayoutManager(activity, columns)
         loadData()
     }
 
