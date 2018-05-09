@@ -47,7 +47,7 @@ class EvntosFragment : Fragment() {
         }
         startActivity(intent)*/
         when(type){
-            ItemEvent.TYPE_EVENT -> startActivity<DetailEventActivity>()
+            ItemEvent.TYPE_EVENT -> startActivity<DetailEventActivity>("pos" to pos)
         }
     }
 

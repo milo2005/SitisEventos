@@ -15,7 +15,14 @@ fun AppCompatActivity.toast(msg:String){
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
 
-inline fun <reified T>Fragment.startActivity(){
+inline fun <reified T>Fragment.startActivity(vararg extras:Pair<String, Any>){
     val intent = Intent(activity, T::class.java)
+    extras.forEach {
+        val value = it.second
+        when(value){
+            is String -> intent.putExtra(it.first, value)
+            is Int -> intent.putExtra(it.first, value)
+        }
+    }
     startActivity(intent)
 }

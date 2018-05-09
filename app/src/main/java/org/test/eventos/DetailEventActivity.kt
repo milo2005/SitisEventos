@@ -15,9 +15,11 @@ class DetailEventActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        collapsingToolbar.title = "Nombre Evento"
 
-        val data = EventData.listEvents()[0] as Evento
+
+        val pos:Int = intent.extras.getInt("pos")
+        val data = EventData.listEvents()[pos] as Evento
+        collapsingToolbar.title = data.nombre
         img.setImageURI(data.imagen)
     }
 
