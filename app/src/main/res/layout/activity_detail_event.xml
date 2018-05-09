@@ -12,22 +12,42 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="600dp"/>
+        <include layout="@layout/content_event"/>
 
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
-            />
+            android:layout_height="210dp"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"
+            app:contentScrim="@color/colorPrimary"
+            >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+
+                />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
 
     </android.support.design.widget.AppBarLayout>
 
