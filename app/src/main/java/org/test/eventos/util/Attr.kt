@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @BindingAdapter("app:txtDateFormat")
-fun setDateFormat(txt:TextView, date: Date){
+fun setDateFormat(txt:TextView, date: Date?){
     val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
-    txt.text = dateFormat.format(date)
+    if(date!=null) txt.text = dateFormat.format(date)
 }

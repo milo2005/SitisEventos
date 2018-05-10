@@ -15,7 +15,7 @@ object EventData {
         if (events == null) {
             events = listOf(
                     Evento("Congreso Gastronomico", "https://www.viajaporcolombia.com/images/popayan-congreso-2017.jpg",
-                            Date(), "Parque Caldas", "3129876543",
+                            null, "Parque Caldas", "3129876543",
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac congue dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus iaculis lectus euismod, dictum erat vel, gravida augue. Phasellus eget ligula et augue suscipit eleifend at id sem. Donec quam dolor, convallis et turpis eu, semper fermentum nunc. Aenean venenatis placerat dignissim. Nunc porttitor gravida porta. Nullam non eros vel quam accumsan commodo. "),
                     Evento("Semana Santa", "https://static.iris.net.co/semana/upload/images/2016/10/19/499526_1.jpg",
                             Date(), "Centro Historico", "3011234567",
