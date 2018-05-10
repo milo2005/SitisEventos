@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="evento"
+            type="org.test.eventos.models.Evento"/>
+
+    </data>
+
+    <FrameLayout
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -23,7 +34,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:backgroundImage="@color/img" />
+                app:backgroundImage="@color/img"
+                app:actualImageUri="@{evento.imagen}"/>
 
             <ImageView
                 android:id="@+id/mask"
@@ -45,7 +57,9 @@
                 app:layout_constraintBottom_toBottomOf="@+id/mask"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:text="Nombre Evento" />
+                tools:text="Nombre Evento"
+                android:text="@{evento.nombre}"
+                />
 
             <ImageView
                 android:id="@+id/iconDate"
@@ -90,7 +104,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:text="TextView"
+                android:text="@{evento.lugar}"
                 app:layout_constraintBottom_toBottomOf="@+id/iconLoc"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iconLoc" />
@@ -114,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:text="TextView"
+                android:text="@{evento.telefono}"
                 app:layout_constraintBottom_toBottomOf="@+id/iconPhone"
                 app:layout_constraintStart_toEndOf="@+id/iconPhone" />
 
@@ -126,3 +140,4 @@
 
 </FrameLayout>
 
+</layout>

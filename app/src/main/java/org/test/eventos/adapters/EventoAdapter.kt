@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.template_evento.view.*
 import kotlinx.android.synthetic.main.template_promocion.view.*
 import org.test.eventos.R
+import org.test.eventos.databinding.TemplateEventoBinding
 import org.test.eventos.models.Evento
 import org.test.eventos.models.ItemEvent
 import org.test.eventos.models.Promocion
@@ -38,16 +39,20 @@ class EventoAdapter(val onClick:((pos:Int, type:Int)->Unit)? = null):RecyclerVie
 
     override fun getItemViewType(position: Int): Int = data[position].getType()
 
+    fun onClickEvent(pos:Int, type:Int){
+        onClick?.invoke(pos, type)
+    }
+
 }
 
 class EventoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+    val binding:TemplateEventoBinding = TemplateEventoBinding.bind(view)
+
     fun bind(evento:Evento,pos:Int,
              onClick:((pos:Int, type:Int)->Unit)?=null){
 
-        itemView.name.text = evento.nombre
-        itemView.loc.text = evento.lugar
-        itemView.phone.text = evento.telefono
-        itemView.img.setImageURI(evento.imagen)
+        binding.evento = evento
         itemView.setOnClickListener{
             onClick?.invoke(pos, ItemEvent.TYPE_EVENT)
         }
