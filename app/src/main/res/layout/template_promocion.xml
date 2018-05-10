@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="promo"
+            type="org.test.eventos.models.Promocion"/>
+        <variable
+            name="pos"
+            type="int"/>
+        <variable
+            name="handler"
+            type="org.test.eventos.adapters.EventoAdapter"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,7 +29,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:setImageURI="@{promo.imagen}"
+        />
 
     <ImageView
         android:id="@+id/mask"
@@ -35,7 +54,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:roundAsCircle="true" />
+        app:roundAsCircle="true"
+        app:setImageURI="@{promo.lugarImagen}"
+        />
 
     <TextView
         android:id="@+id/namePromo"
@@ -46,7 +67,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="@{promo.nombre}"
         android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgPlace"
@@ -61,10 +82,11 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="@{promo.lugar}"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgPlace"
         app:layout_constraintTop_toBottomOf="@+id/namePromo" />
 
 </android.support.constraint.ConstraintLayout>
+</layout>

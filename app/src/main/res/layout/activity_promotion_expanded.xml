@@ -95,6 +95,7 @@
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="parent"
+
         app:srcCompat="@drawable/profile" />
 
     <TextView

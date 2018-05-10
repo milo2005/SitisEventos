@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.template_evento.view.*
 import kotlinx.android.synthetic.main.template_promocion.view.*
 import org.test.eventos.R
 import org.test.eventos.databinding.TemplateEventoBinding
+import org.test.eventos.databinding.TemplatePromocionBinding
 import org.test.eventos.models.Evento
 import org.test.eventos.models.ItemEvent
 import org.test.eventos.models.Promocion
@@ -32,8 +33,8 @@ class EventoAdapter(val onClick:((pos:Int, type:Int)->Unit)? = null):RecyclerVie
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is EventoViewHolder -> holder.bind(data[position] as Evento, position, onClick)
-            is PromocionViewHolder -> holder.bind(data[position] as Promocion, position, onClick)
+            is EventoViewHolder -> holder.bind(data[position] as Evento, position, this)
+            is PromocionViewHolder -> holder.bind(data[position] as Promocion, position, this)
         }
     }
 
@@ -49,24 +50,20 @@ class EventoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     val binding:TemplateEventoBinding = TemplateEventoBinding.bind(view)
 
-    fun bind(evento:Evento,pos:Int,
-             onClick:((pos:Int, type:Int)->Unit)?=null){
-
+    fun bind(evento:Evento,pos:Int, adapter:EventoAdapter){
         binding.evento = evento
-        itemView.setOnClickListener{
-            onClick?.invoke(pos, ItemEvent.TYPE_EVENT)
-        }
+        binding.position = pos
+        binding.handler = adapter
     }
 }
 
 class PromocionViewHolder(view:View): RecyclerView.ViewHolder(view){
-    fun bind(promo:Promocion, pos:Int,  onClick:((pos:Int, type:Int)->Unit)?=null){
-        itemView.namePromo.text = promo.nombre
-        itemView.place.text = promo.lugar
-        itemView.imgPlace.setImageURI(promo.lugarImagen)
-        itemView.imgPromo.setImageURI(promo.imagen)
-        itemView.setOnClickListener{
-            onClick?.invoke(pos, ItemEvent.TYPE_PROMO)
-        }
+
+    val binding:TemplatePromocionBinding = TemplatePromocionBinding.bind(view)
+
+    fun bind(promo:Promocion, pos:Int,  adapter:EventoAdapter){
+        binding.promo = promo
+        binding.pos = pos
+        binding.handler = adapter
     }
 }
